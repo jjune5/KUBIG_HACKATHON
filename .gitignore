@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+.DS_Store
+Thumbs.db
+.qdrant/
+.rag_index_cache.json
+.idea/
+.vscode/
+.claude/
+*.log

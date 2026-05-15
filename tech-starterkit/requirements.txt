@@ -1,0 +1,15 @@
+# ── 필수 (baseline_rag.py 핵심 의존성) ──────────────────────────────────
+pandas>=2.0.0              # submission.csv 생성·검증 (validator, upstage_tracker)
+cryptography>=42.0.0       # AES-256-GCM 복호화 (decryptor.py)
+pypdf>=4.0.0               # PDF 텍스트 추출 (_read_with_pypdf)
+qdrant-client>=1.18.0      # Vector DB (in-memory)
+rank-bm25>=0.2.2           # Hybrid retrieval 의 sparse 인덱스 (flag: hybrid)
+
+# ── flag 'rerank' 사용 시 필요 ─────────────────────────────────────────
+sentence-transformers>=2.7.0   # BGE cross-encoder (BAAI/bge-reranker-v2-m3)
+
+# ── 선택 ────────────────────────────────────────────────────────────────
+# 다른 embedding provider 사용 시 별도 SDK 불필요 (urllib 으로 직접 호출)
+#   - EMBED_PROVIDER=openai → OPENAI_API_KEY
+#   - EMBED_PROVIDER=voyage → VOYAGE_API_KEY
+# Upstage Document Parse 도 urllib 으로 직접 호출 (별도 SDK X)
